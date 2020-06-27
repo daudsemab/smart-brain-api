@@ -52,6 +52,9 @@ app.use(express.static("./public"));
 // --- MIDLEWARES ENDS
 
 
+app.get('/', (req, res) => console.log("it is working."))
+
+
 // ---REGISTER
 
 app.post("/register", (req, res) => handleRegister(req, res, smartDb, bcrypt));
