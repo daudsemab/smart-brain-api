@@ -52,7 +52,7 @@ app.use(express.static("./public"));
 // --- MIDLEWARES ENDS
 
 
-app.get('/', (req, res) => console.log("it is working."))
+app.get('/', (req, res) => res.send("it is working."))
 
 
 // ---REGISTER
