@@ -15,11 +15,10 @@ const app = express();
 const smartDb = knex({
   client: "pg",
   connection: {
-    host: "postgresql-metric-10468",
-    port: "4000",
-    user: "postgres",
-    password: "psqlpassword",
-    database: "smartbrain",
+    host: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
   },
 });
 
