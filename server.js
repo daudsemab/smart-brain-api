@@ -76,7 +76,7 @@ app.post("/upload/image", (req, res) => handleUploadImage(req, res, upload));
 
 app.get("/images/:name", (req, res) => {
   const { name } = req.params;
-  res.sendFile(__dirname + `/public/uploads/${name}`);
+  res.sendFile(`./public/uploads/${name}`);
 });
 
 app.listen(PORT, () => {
