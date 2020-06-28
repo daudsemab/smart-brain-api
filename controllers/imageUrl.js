@@ -1,4 +1,4 @@
-const handleApiCall = (req, res, faceApp) => {
+const handleApiCall = (req, res, faceApp, Clarifai) => {
   faceApp.models
     .predict(Clarifai.DEMOGRAPHICS_MODEL, req.body.url)
     .then((response) => {

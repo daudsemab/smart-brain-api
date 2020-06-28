@@ -51,7 +51,7 @@ app.post("/signin", (req, res) => handleSignin(req, res, smartDb, bcrypt));
 
 // ---HADLE IMAGE URL
 
-app.post("/handleUrl", (req, res) => handleApiCall(req, res, faceApp));
+app.post("/handleUrl", (req, res) => handleApiCall(req, res, faceApp, Clarifai));
 
 // ---UPDATE USER ENTERIES
 
