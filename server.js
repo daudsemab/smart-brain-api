@@ -10,6 +10,12 @@ const { handleApiCall } = require("./controllers/imageUrl");
 
 const app = express();
 
+const Clarifai = require("clarifai");
+
+const faceApp = new Clarifai.App({
+  apiKey: process.env.API_CLARIFAI,
+});
+
 const smartDb = knex({
   client: "pg",
   connection: {
@@ -45,7 +51,7 @@ app.post("/signin", (req, res) => handleSignin(req, res, smartDb, bcrypt));
 
 // ---HADLE IMAGE URL
 
-app.post("/handleUrl", (req, res) => handleApiCall(req, res));
+app.post("/handleUrl", (req, res) => handleApiCall(req, res, faceApp));
 
 // ---UPDATE USER ENTERIES
 
